@@ -13,6 +13,8 @@ export interface ICartContext {
   products: CartProduct[];
   toggleCart: () => void;
   addProduct: (product: CartProduct) => void;
+  decreaseProductQuantity: (productId: number) => void;
+  increaseProductQuantity: (productId: number) => void;
 }
 
 export const CartContext = createContext<ICartContext>({
@@ -20,6 +22,8 @@ export const CartContext = createContext<ICartContext>({
   products: [],
   toggleCart: () => {},
   addProduct: () => {},
+  decreaseProductQuantity: () => {},
+  increaseProductQuantity: () => {},
 });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
@@ -29,9 +33,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const toggleCart = () => {
     setIsOpen((prev) => !prev);
   };
+
   const addProduct = (product: CartProduct) => {
     const productIsAlreadyOnTheCart = products.some(
-      (prevProduct) => prevProduct.id === product.id,
+      (prevProduct) => prevProduct.id === product.id
     );
     if (!productIsAlreadyOnTheCart) {
       return setProducts((prev) => [...prev, product]);
@@ -48,6 +53,35 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       });
     });
   };
+
+  const decreaseProductQuantity = (productId: number) => {
+    setProducts((prevProducts) => {
+      return prevProducts.map((prevProduct) => {
+        if (prevProduct.id === productId.toString() && prevProduct.quantity > 1) {
+          return {
+            ...prevProduct,
+            quantity: prevProduct.quantity - 1,
+          };
+        }
+        return prevProduct;
+      });
+    });
+  };
+
+  const increaseProductQuantity = (productId: number) => {
+    setProducts((prevProducts) => {
+      return prevProducts.map((prevProduct) => {
+        if (prevProduct.id === productId.toString()) {
+          return {
+            ...prevProduct,
+            quantity: prevProduct.quantity + 1,
+          };
+        }
+        return prevProduct;
+      });
+    });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -55,6 +89,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         products,
         toggleCart,
         addProduct,
+        decreaseProductQuantity,
+        increaseProductQuantity,
       }}
     >
       {children}
