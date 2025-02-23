@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marketplace Food
 
-## Getting Started
+Este projeto foi desenvolvido durante a **Fullstack Week** promovida pela **Full Stack Club**. O objetivo é criar uma réplica que simula um sistema de pedidos de alimentos online, inspirado no processo de compra em um **totem de pedidos do McDonald's**, com funcionalidades focadas em uma experiência de usuário intuitiva, utilizando as tecnologias mais recentes do desenvolvimento Full Stack.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### ⚠️ **Status do Projeto**
+- A funcionalidade de **gerenciamento de pedidos** ainda está em desenvolvimento.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![ShadCN](https://img.shields.io/badge/ShadCN-000000?style=for-the-badge&logo=shadcn&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
-## Learn More
+### Backend
 
-To learn more about Next.js, take a look at the following resources:
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Funcionalidades
 
-## Deploy on Vercel
+- **Interface de pedido:** Interface intuitiva para selecionar itens do cardápio e realizar o pedido.
+- **Totem de pedidos simulado:** Processo de pedido com categorias de produtos.
+- **Sistema de gerenciamento de pedidos:** Em desenvolvimento. (Ainda não implementado completamente).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contribuições
+
+Contribuições são bem-vindas! Para contribuir:
+
+- **Abra uma Issue:** Relate um bug ou sugira uma melhoria.
+- **Crie um Pull Request:** Faça alterações no código e envie uma solicitação para revisão.
+
+## 📧 Contato
+
+Para dúvidas ou feedback, entre em contato:
+
+- **E-mail:** [nina.kastro@icloud.com](mailto:nina.kastro@icloud.com)
+- **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/karinacmartins/)
+- **GitHub:** [GitHub](https://github.com/karinacmartins)
+
+## Observações
+
+Este projeto foi desenvolvido durante a Fullstack Week, uma imersão de 7 dias focada no aprendizado de tecnologias Full Stack.
+
+<br>
+<br>
+
+  <div align="right">Made with 💜 by <a href="https://github.com/karinacmartins">KM</a>.</div>
