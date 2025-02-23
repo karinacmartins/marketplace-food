@@ -1,9 +1,5 @@
+// src/lib/prisma.ts
 import { PrismaClient } from "@prisma/client";
-
-declare global {
-  // Declarando a variável cachedPrisma no escopo global
-  var cachedPrisma: PrismaClient | undefined;
-}
 
 let prisma: PrismaClient;
 
