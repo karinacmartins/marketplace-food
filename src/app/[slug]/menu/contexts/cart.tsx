@@ -13,8 +13,9 @@ export interface ICartContext {
   products: CartProduct[];
   toggleCart: () => void;
   addProduct: (product: CartProduct) => void;
-  decreaseProductQuantity: (productId: number) => void;
-  increaseProductQuantity: (productId: number) => void;
+  decreaseProductQuantity: (productId: string) => void;
+  increaseProductQuantity: (productId: string) => void;
+  removeProduct: (productId: string) => void;
 }
 
 export const CartContext = createContext<ICartContext>({
@@ -24,6 +25,7 @@ export const CartContext = createContext<ICartContext>({
   addProduct: () => {},
   decreaseProductQuantity: () => {},
   increaseProductQuantity: () => {},
+  removeProduct: () => {},
 });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
@@ -54,32 +56,35 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  const decreaseProductQuantity = (productId: number) => {
+  const decreaseProductQuantity = (productId: string) => {
     setProducts((prevProducts) => {
       return prevProducts.map((prevProduct) => {
-        if (prevProduct.id === productId.toString() && prevProduct.quantity > 1) {
-          return {
-            ...prevProduct,
-            quantity: prevProduct.quantity - 1,
-          };
+        if (prevProduct.id != productId) {
+          return prevProduct;
         }
-        return prevProduct;
+        if (prevProduct.quantity === 1) {
+          return prevProduct;
+        }
+        return { ...prevProduct, quantity: prevProduct.quantity - 1 };
       });
     });
   };
 
-  const increaseProductQuantity = (productId: number) => {
+  const increaseProductQuantity = (productId: string) => {
     setProducts((prevProducts) => {
       return prevProducts.map((prevProduct) => {
-        if (prevProduct.id === productId.toString()) {
-          return {
-            ...prevProduct,
-            quantity: prevProduct.quantity + 1,
-          };
+        if (prevProduct.id != productId) {
+          return prevProduct;
         }
-        return prevProduct;
+        return { ...prevProduct, quantity: prevProduct.quantity + 1 };
       });
     });
+  };
+
+  const removeProduct = (productId: string) => {
+    setProducts(prevProducts =>
+      prevProducts.filter((product) => product.id !== productId)
+    );
   };
 
   return (
@@ -91,6 +96,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         addProduct,
         decreaseProductQuantity,
         increaseProductQuantity,
+        removeProduct,
       }}
     >
       {children}

@@ -1,8 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 
 declare global {
-  // Substitua `var` por `let` ou `const`
-  let cachedPrisma: PrismaClient | undefined;
+  // Declarando a variável cachedPrisma no escopo global
+  var cachedPrisma: PrismaClient | undefined;
 }
 
 let prisma: PrismaClient;
@@ -10,6 +10,7 @@ let prisma: PrismaClient;
 if (process.env.NODE_ENV === 'production') {
   prisma = new PrismaClient();
 } else {
+  // Usando cachedPrisma no ambiente de desenvolvimento
   if (!globalThis.cachedPrisma) {
     globalThis.cachedPrisma = new PrismaClient();
   }
