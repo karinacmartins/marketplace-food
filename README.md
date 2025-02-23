@@ -47,6 +47,7 @@ Para dúvidas ou feedback, entre em contato:
 ## Observações
 
 Este projeto foi desenvolvido durante a Fullstack Week, uma imersão de 7 dias focada no aprendizado de tecnologias Full Stack.
+Esta versão é otimizada para dispositivos móveis. Para uma melhor visualização em desktop, é necessário ajustar a configuração da interface.
 
 <br>
 <br>
