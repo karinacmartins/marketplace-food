@@ -48,7 +48,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
   };
   return (
     <>
-      <div className="relative z-50 mt-[-1.5rem] flex flex-auto flex-col overflow-hidden rounded-t-3xl p-5 h-full pb-6">
+      <div className="relative z-50 mt-[-1.5rem] flex h-full flex-auto flex-col overflow-hidden rounded-t-3xl p-5  pb-6">
         <div className="flex-auto overflow-hidden">
           {/* RESTAURANTE */}
           <div className="flex items-center gap-1.5">
