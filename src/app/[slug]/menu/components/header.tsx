@@ -29,7 +29,7 @@ const RestaurantHeader = ({restaurant}: RestaurantHeaderProps) => {
         fill
         className="object-cover"
     />
-    <Button variant="secondary" size="icon" className="absolute top-4 right-4 rounded-full z-50">
+    <Button variant="secondary" size="icon" className="absolute left-4 top-4 z-50 rounded-full">
         <ScrollTextIcon/>
     </Button>
 </div> );
