@@ -34,7 +34,10 @@ const ProductPage = async ({ params }: ProductPageProps) => {
       <ProductHeader product={product} />
       <ProductDetails product={product} />
     </div>
+    
   );
+  
+
 };
 
 export default ProductPage;
