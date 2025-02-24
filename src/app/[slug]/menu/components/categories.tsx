@@ -30,7 +30,7 @@ type MenuCategoriesWithProducts = Prisma.MenuCategoryGetPayload<{
 const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
   const [selectedCategory, setSelectedCategory] =
     useState<MenuCategoriesWithProducts>(restaurant.menuCategories[0]);
-  const { products, total, toggleCart, totalQuantity } =
+  const { products, total, toggleCart,} =
     useContext(CartContext);
   const handleCategoryClick = (category: MenuCategoriesWithProducts) => {
     setSelectedCategory(category);
@@ -83,10 +83,7 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
           <div>
             <p className="text-xs text-muted-foreground">Total dos pedidos</p>
             <p className="text-sm font-semibold">
-              {formatCurrency(total)}
-              <span className="text-xs font-normal text-muted-foreground">
-                / {totalQuantity} {totalQuantity > 1 ? "itens" : "item"}
-              </span>
+              {formatCurrency(total)}             
             </p>
           </div>
           <Button onClick={toggleCart}>Ver sacola</Button>
