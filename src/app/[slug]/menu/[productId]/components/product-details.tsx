@@ -28,17 +28,15 @@ interface ProductDetailsProps {
 const ProductDetails = ({ product }: ProductDetailsProps) => {
   const { toggleCart, addProduct } = useContext(CartContext);
   const [quantity, setQuantity] = useState<number>(1);
+
   const handleDecreaseQuantity = () => {
-    setQuantity((prev) => {
-      if (prev === 1) {
-        return 1;
-      }
-      return prev - 1;
-    });
+    setQuantity((prev) => (prev === 1 ? 1 : prev - 1));
   };
+
   const handleIncreaseQuantity = () => {
     setQuantity((prev) => prev + 1);
   };
+
   const handleAddToCart = () => {
     addProduct({
       ...product,
@@ -46,9 +44,10 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
     });
     toggleCart();
   };
+
   return (
     <>
-      <div className="relative z-50 mt-[-1.5rem] flex flex-auto flex-col overflow-hidden rounded-t-3xl p-5">
+      <div className="relative h-full z-50 mt-[-1.5rem] flex flex-col overflow-hidden rounded-t-3xl p-5">
         <div className="flex-auto overflow-hidden">
           {/* RESTAURANTE */}
           <div className="flex items-center gap-1.5">
@@ -102,11 +101,11 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
 
             {/* INGREDIENTS */}
             <div className="mt-6 space-y-3">
-              <div className="5 flex items-center gap-1">
+              <div className="flex items-center gap-1">
                 <ChefHatIcon size={18} />
                 <h4 className="font-semibold">Ingredientes</h4>
               </div>
-              <ul className="text-muted-fo list-disc px-5 text-sm text-muted-foreground">
+              <ul className="list-disc px-5 text-sm text-muted-foreground">
                 {product.ingredients.map((ingredient) => (
                   <li key={ingredient}>{ingredient}</li>
                 ))}
@@ -115,9 +114,11 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
           </ScrollArea>
         </div>
 
-        <Button className="w-full rounded-full" onClick={handleAddToCart}>
-          Adicionar à sacola
-        </Button>
+        <div className="mt-4 pt-4">
+          <Button className="w-full rounded-full" onClick={handleAddToCart}>
+            Adicionar à sacola
+          </Button>
+        </div>
       </div>
       <CartSheet />
     </>
