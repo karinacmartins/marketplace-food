@@ -57,13 +57,7 @@ const RestarantPage = async ({ params }: RestarantPageProps) => {
         />
       </div>
 
-      {/* Rodapé com o desenvolvedor */}
-      <footer className="absolute bottom-2 text-xs text-white opacity-75">
-        Desenvolvido por
-        <Link href="https://github.com/karinacmartins" target="_blank" className="ml-1 hover:underline hover:text-gray-200">
-          Karina Martins
-        </Link>
-      </footer>
+      
     </div>
   );
 };
