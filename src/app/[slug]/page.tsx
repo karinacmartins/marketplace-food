@@ -2,7 +2,6 @@ import { db } from "@/lib/prisma";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import ConsumptionMethodOption from "./components/consumption-method-option";
-import Link from "next/link";
 
 interface RestarantPageProps {
   params: Promise<{ slug: string }>;
